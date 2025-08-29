@@ -1,8 +1,14 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const cors = require("cors");
 
 const app = express();
 app.use(bodyParser.json());
+
+
+app.use(cors({
+  origin: "*"
+}));
 
 app.post("/bfhl", (req, res) => {
   try {
@@ -38,9 +44,9 @@ app.post("/bfhl", (req, res) => {
 
     const response = {
       is_success: true,
-      user_id: "anurag_27092004".toLowerCase(), 
-      email: "anuragb745@gmail.com", 
-      roll_number: "22BIT0052", 
+      user_id: "anurag_27092004".toLowerCase(),
+      email: "anuragb745@gmail.com",
+      roll_number: "22BIT0052",
       odd_numbers,
       even_numbers,
       alphabets,
